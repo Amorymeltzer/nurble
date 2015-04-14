@@ -15,10 +15,10 @@ unless (@ARGV == 2)
     exit;
 }
 
-my $output = "nurbled_text.txt"; # new filename
+my $output = 'nurbled_text.txt'; # new filename
 my %speech; # hash to hold part of speech lookup
 
-open (my $pos, "<$ARGV[0]") or die $!;
+open my $pos, '<', "$ARGV[0]" or die $!;
 
 while (<$pos>)
 {
@@ -27,10 +27,10 @@ while (<$pos>)
     $tmp[1] =~ s/\|//go; # get rid of | character
     $speech{$tmp[0]} = $tmp[1];
 }
-close ($pos); # tidy up
+close $pos;
 
 #open (my $new, ">$output") or die $!; # output nurbled text
-open (my $old, "<$ARGV[1]") or die $!;
+open my $old, '<', "$ARGV[1]" or die $!;
 
 while (<$old>)
 {
@@ -47,7 +47,7 @@ while (<$old>)
 	}
 	else
 	{
-	    print "nurble ";
+	    print 'nurble ';
 	}
     }
     print "\n"; # restore some semblance of formating

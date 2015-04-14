@@ -34,12 +34,13 @@ open my $old, '<', "$ARGV[1]" or die $!;
 while (<$old>) {
   chomp;
   my @tmp = split /\s/;
+  #print "@tmp\n";
 
   for my $i (0..(scalar @tmp - 1)) {
-    #	print "\t$tmp[$i]\n";
-    if (($speech{$tmp[$i]}) && ($speech{$tmp[$i]} =~ m/N/i)) {
+    #print "\t$tmp[$i]\n";
+    if (($speech{$tmp[$i]}) && ($speech{$tmp[$i]} =~ m/^N/i)) {
       print "$tmp[$i] ";
-      #	    print "\n$tmp[$i]\t$speech{$tmp[$i]}\n\n";
+      #print "\n$tmp[$i]\t$speech{$tmp[$i]}\n\n";
     } else {
       print 'nurble ';
     }

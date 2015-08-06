@@ -4,6 +4,9 @@
 # http://www.smbc-comics.com/?db=comics&id=2779
 # http://wordlist.sourceforge.net/
 
+## Or just learn python?
+## http://www.nltk.org/
+
 
 use strict;
 use warnings;
